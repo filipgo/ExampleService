@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using Data.Interfaces;
 using Data.Models;
@@ -21,13 +19,9 @@ namespace Services.Services
         private readonly ILocationService _locationService;
 
         #region public methods
-
-        
-
-
         private bool CheckCoordinte(Location coordinates)
         {
-            return false;
+            throw new NotImplementedException();
         }
 
         public async Task AddSpot(double lat, double lon, int? grade = null, string description = null)
@@ -50,7 +44,8 @@ namespace Services.Services
             
             var spot = new Spot
             {
-                Location = location
+                Location = location,
+                Id = Guid.NewGuid()
             };
             
             if (grade.HasValue && description != null)
