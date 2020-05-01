@@ -11,17 +11,17 @@ namespace Data.Repository.Base
             throw new NotImplementedException();
         }
 
-        public async Task<bool> Create(T created)
+        public async Task Create(T created)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<bool> Update(T updated)
+        public async Task Update(T updated)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<bool> Delete(Guid id)
+        public async Task Delete(Guid id)
         {
             throw new NotImplementedException();
         }

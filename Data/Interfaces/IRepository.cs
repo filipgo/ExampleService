@@ -7,10 +7,10 @@ namespace Data.Interfaces
     {
         Task<T> Read(Guid id);
 
-        Task<bool> Create(T created);
+        Task Create(T created);
 
-        Task<bool> Update(T updated);
+        Task Update(T updated);
 
-        Task<bool> Delete(Guid id);
+        Task Delete(Guid id);
     }
 }
