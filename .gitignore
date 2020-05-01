@@ -132,12 +132,7 @@ ServiceFabricBackup/
 **/.idea/httpRequests/
 
 # Sensitive or high-churn files
-**/.idea/**/dataSources/
-**/.idea/**/dataSources.ids
-**/.idea/**/dataSources.xml
-**/.idea/**/dataSources.local.xml
-**/.idea/**/sqlDataSources.xml
-**/.idea/**/dynamic.xml
+.idea/
 
 # Rider
 # Rider auto-generates .iml files, and contentModel.xml
