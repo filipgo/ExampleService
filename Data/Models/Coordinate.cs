@@ -2,7 +2,13 @@ namespace Data.Models
 {
     public class Coordinate
     {
-        public string Value { get; set; }
+        public Coordinate(double value)
+        {
+            value = Value;
+            
+        }
+        
+        public double Value { get; }
         
         public int Degree { get; set; }
         
@@ -13,7 +19,7 @@ namespace Data.Models
         public int DecimalSeconds { get; set; }
 
 
-        public string GetTraditionalNotationValue()
+        public string GetDmsValue() //DMS if Degree Minute Second format of Longitude/Latitude 
         {
             return $"";
         }

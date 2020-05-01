@@ -11,7 +11,7 @@ namespace Services.Services
 
         private bool CheckCoordinte(Coordinates coordinates)
         {
-            
+            return false;
         }
         
     }
