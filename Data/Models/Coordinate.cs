@@ -1,17 +1,23 @@
 using System;
+using Data.Models.Enums;
 
 namespace Data.Models
 {
     public class Coordinate
     {
-        public Coordinate(double value)
+        public Coordinate(double value, CoordinateTypeEnum type)
         {
             Value = value;
-
+            Type = type;
+            CalculateDms();
         }
         
         // ReSharper disable once MemberCanBePrivate.Global
         public double Value { get;}
+        
+        private CoordinateTypeEnum Type { get; set; }
+        
+        private CoordinateDirectionEnum Direction { get; set; }
         
         private int Degree { get; set; }
         
@@ -24,7 +30,8 @@ namespace Data.Models
 
         public string GetDmsValue(bool withDecimalSeconds = false) //DMS if Degree Minute Second format of Longitude/Latitude 
         {
-            return $"";
+            string seconds = withDecimalSeconds == true ? $"{Seconds}.{DecimalSeconds}" : $"{Seconds}";
+            return $"{Degree}\u00b0 {Minutes}' {seconds}\"";
         }
 
         private void CalculateDms()
@@ -34,13 +41,12 @@ namespace Data.Models
             Degree = Convert.ToInt32(Value - rest);
 
             var rest2 = rest % (1.0 / 60);
-            Minutes = Convert.ToInt32(rest - rest2);
+            Minutes = Convert.ToInt32(60 * (rest - rest2));
 
             var rest3 = rest2 % (1.0 / 360);
-            Seconds = Convert.ToInt32(rest2 - rest3);
+            Seconds = Convert.ToInt32(3600 * (rest2 - rest3));
 
-            DecimalSeconds = Math.Round(rest3, 10);
-
+            DecimalSeconds = Math.Round(3600 * rest3, 4);
         }
     }
 }
