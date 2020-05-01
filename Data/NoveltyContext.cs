@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Data
 {
-    public class NoveltyContext : DbContext
+    public class SpotContext : DbContext
     {
         
     }
