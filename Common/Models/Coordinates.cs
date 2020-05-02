@@ -1,7 +1,4 @@
-using System;
-using Data.Models.Enums;
-
-namespace Data.Models
+namespace Common.Models
 {
     public class Location
     {

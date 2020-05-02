@@ -1,6 +1,6 @@
-using Data.Models.Enums;
+using Common.Models.Enums;
 
-namespace Data.Models
+namespace Common.Models
 {
     public class DmsCoordinate
     {

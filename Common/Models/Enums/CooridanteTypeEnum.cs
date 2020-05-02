@@ -1,4 +1,4 @@
-namespace Data.Models.Enums
+namespace Common.Models.Enums
 {
     public enum CoordinateTypeEnum
     {

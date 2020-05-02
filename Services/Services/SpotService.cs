@@ -1,8 +1,8 @@
 using System;
 using System.Threading.Tasks;
+using Common.Models;
+using Common.Models.Enums;
 using Data.Interfaces;
-using Data.Models;
-using Data.Models.Enums;
 using Services.Interfaces;
 
 namespace Services.Services
@@ -19,11 +19,6 @@ namespace Services.Services
         private readonly ILocationService _locationService;
 
         #region public methods
-        private bool CheckCoordinte(Location coordinates)
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task AddSpot(double lat, double lon, int? grade = null, string description = null)
         {
             var location = new Location

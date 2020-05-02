@@ -1,5 +1,5 @@
-using Data.Models;
-using Data.Models.Enums;
+using Common.Models;
+using Common.Models.Enums;
 
 namespace Services.Interfaces
 {
@@ -8,5 +8,7 @@ namespace Services.Interfaces
         DmsCoordinate CalculateDms(double value, CoordinateTypeEnum type);
 
         CoordinateDirectionEnum CalculateDirection(double value, CoordinateTypeEnum type);
+
+        bool ValidateCoordinate(double value);
     }
 }

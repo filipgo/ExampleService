@@ -1,6 +1,6 @@
 using System;
-using Data.Models;
-using Data.Models.Enums;
+using Common.Models;
+using Common.Models.Enums;
 using Services.Interfaces;
 
 namespace Services.Services
@@ -39,6 +39,11 @@ namespace Services.Services
             }
 
             return result;
+        }
+
+        public bool ValidateCoordinate(double value)
+        {
+            throw new NotImplementedException();
         }
     }
 }

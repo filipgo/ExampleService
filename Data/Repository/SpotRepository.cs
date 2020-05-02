@@ -1,7 +1,7 @@
 using System;
 using System.Threading.Tasks;
+using Common.Models;
 using Data.Interfaces;
-using Data.Models;
 using Data.Repository.Base;
 
 namespace Data.Repository

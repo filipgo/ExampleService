@@ -1,5 +1,5 @@
 using System.Threading.Tasks;
-using Data.Models;
+using Common.Models;
 
 namespace Data.Interfaces
 {
