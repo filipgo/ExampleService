@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Common.Models;
 using Common.Models.Enums;
+using Common.Models.Requests;
 using Data.Interfaces;
 using Services.Interfaces;
 
@@ -19,21 +20,21 @@ namespace Services.Services
         private readonly ILocationService _locationService;
 
         #region public methods
-        public async Task AddSpot(double lat, double lon, int? grade = null, string description = null)
+        public async Task AddSpot(CreateSpotRequest request)
         {
             var location = new Location
             {
                 Latitude = new Coordinate
                 {
-                    Value = lat,
+                    Value = request.Lat,
                     Type = CoordinateTypeEnum.Latitude,
-                    DmsCoordinate = _locationService.CalculateDms(lat, CoordinateTypeEnum.Latitude),
+                    DmsCoordinate = _locationService.CalculateDms(request.Lat, CoordinateTypeEnum.Latitude),
                 },
                 Longitude = new Coordinate
                 {
-                    Value = lon,
+                    Value = request.Lon,
                     Type = CoordinateTypeEnum.Longitude,
-                    DmsCoordinate = _locationService.CalculateDms(lon, CoordinateTypeEnum.Longitude)
+                    DmsCoordinate = _locationService.CalculateDms(request.Lon, CoordinateTypeEnum.Longitude)
                 }
             };
             
@@ -43,12 +44,12 @@ namespace Services.Services
                 Id = Guid.NewGuid()
             };
             
-            if (grade.HasValue && description != null)
+            if (request.Grade.HasValue && request.Description != null)
             {
                 spot.Reviews.Add(new Review
                 {
-                    Description = description,
-                    Grade = grade.Value
+                    Description = request.Description,
+                    Grade = request.Grade.Value
                 });
             }
 

@@ -1,12 +1,13 @@
 using System;
 using System.Threading.Tasks;
 using Common.Models;
+using Common.Models.Requests;
 
 namespace Services.Interfaces
 {
     public interface ISpotService
     {
-        Task AddSpot(double lat, double lon, int? grade = null, string description = null);
+        Task AddSpot(CreateSpotRequest request);
 
         Task<Spot> GetSpot(Guid id);
 
